@@ -14,6 +14,7 @@ const (
 
 func main() {
 	fmt.Println(procstr("HELLO PEOPLE!", CAP|REV))
+	fmt.Println(sameSign(-1, -2))
 }
 
 func procstr(str string, conf byte) string {
@@ -53,4 +54,8 @@ func procstr(str string, conf byte) string {
 		str = rev(str)
 	}
 	return str
+}
+
+func sameSign(a, b int) bool {
+	return a^b >= 0
 }
