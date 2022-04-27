@@ -12,6 +12,12 @@ const (
 )
 
 func processString(str string, conf byte) string {
+	// processString changes string str according to configuration conf:
+	// UPPER - make str uppercase
+	// LOWER - make str lowercase
+	// CAP - capitalize first letter of each word in str
+	// REV - reverse the letters order in str
+	// conf can set multiple parameters as in conf = REV|CAP
 	rev := func(s string) string {
 		runes := []rune(s)
 		n := len(runes)
@@ -51,17 +57,21 @@ func processString(str string, conf byte) string {
 }
 
 func sameSign(a, b int) bool {
+	// sameSign checks whether numbers a and b have the same sign
 	return a^b >= 0
 }
 
-func setNthBit(num, position int) int {
-	return num | (1 << (position - 1))
+func setNthBit(num, pos int) int {
+	// setNthBit sets bit on position pos in num
+	return num | (1 << (pos - 1))
 }
 
-func unsetNthBit(num, position int) int {
-	return num &^ (1 << (position - 1))
+func unsetNthBit(num, pos int) int {
+	// unsetNthBit unsets bit on position pos in num
+	return num &^ (1 << (pos - 1))
 }
 
-func getNthBit(num, position int) int {
-	return num & (1 << (position - 1))
+func getNthBit(num, pos int) int {
+	// getNthBit returns bit on position pos in num
+	return num & (1 << (pos - 1))
 }
