@@ -1,7 +1,6 @@
-package main
+package bitOperations
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -12,12 +11,7 @@ const (
 	REV
 )
 
-func main() {
-	fmt.Println(procstr("HELLO PEOPLE!", CAP|REV))
-	fmt.Println(sameSign(-1, -2))
-}
-
-func procstr(str string, conf byte) string {
+func processString(str string, conf byte) string {
 	rev := func(s string) string {
 		runes := []rune(s)
 		n := len(runes)
@@ -58,4 +52,16 @@ func procstr(str string, conf byte) string {
 
 func sameSign(a, b int) bool {
 	return a^b >= 0
+}
+
+func setNthBit(num, position int) int {
+	return num | (1 << (position - 1))
+}
+
+func unsetNthBit(num, position int) int {
+	return num &^ (1 << (position - 1))
+}
+
+func getNthBit(num, position int) int {
+	return num & (1 << (position - 1))
 }
