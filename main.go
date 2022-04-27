@@ -6,10 +6,10 @@ import (
 )
 
 const (
-	UPPER = 1
-	LOWER = 2
-	CAP   = 4
-	REV   = 8
+	UPPER = 1 << iota
+	LOWER
+	CAP
+	REV
 )
 
 func main() {
