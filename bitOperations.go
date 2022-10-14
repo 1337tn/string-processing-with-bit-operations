@@ -1,4 +1,4 @@
-package bitOperations
+package bitoperations
 
 import (
 	"strings"
@@ -11,7 +11,7 @@ const (
 	REV
 )
 
-func processString(str string, conf byte) string {
+func ProcessString(str string, conf byte) string {
 	// processString changes string str according to configuration conf:
 	// UPPER - make str uppercase
 	// LOWER - make str lowercase
@@ -56,22 +56,22 @@ func processString(str string, conf byte) string {
 	return str
 }
 
-func sameSign(a, b int) bool {
+func SameSign(a, b int) bool {
 	// sameSign checks whether numbers a and b have the same sign
 	return a^b >= 0
 }
 
-func setNthBit(num, pos int) int {
+func SetNthBit(num, pos int) int {
 	// setNthBit sets bit on position pos in num
 	return num | (1 << (pos - 1))
 }
 
-func unsetNthBit(num, pos int) int {
+func UnsetNthBit(num, pos int) int {
 	// unsetNthBit unsets bit on position pos in num
 	return num &^ (1 << (pos - 1))
 }
 
-func getNthBit(num, pos int) int {
+func GetNthBit(num, pos int) int {
 	// getNthBit returns bit on position pos in num
 	return num & (1 << (pos - 1))
 }
