@@ -12,6 +12,34 @@ const (
 	REV
 )
 
+func Upper(str string) (string, error) {
+	return processString(str, UPPER)
+}
+
+func Lower(str string) (string, error) {
+	return processString(str, LOWER)
+}
+
+func Capitalize(str string) (string, error) {
+	return processString(str, CAP)
+}
+
+func Reverse(str string) (string, error) {
+	return processString(str, REV)
+}
+
+func UpperAndReverse(str string) (string, error) {
+	return processString(str, UPPER|REV)
+}
+
+func LowerAndReverse(str string) (string, error) {
+	return processString(str, LOWER|REV)
+}
+
+func CapitalizeAndReverse(str string) (string, error) {
+	return processString(str, CAP|REV)
+}
+
 func SameSign(a, b int) bool {
 	// sameSign checks whether numbers a and b have the same sign
 	return a^b >= 0
