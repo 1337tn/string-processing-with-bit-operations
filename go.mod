@@ -1,3 +1,3 @@
-module awesomeProject1
+module bitoperations
 
-go 1.18
+go 1.20
